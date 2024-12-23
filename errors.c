@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: krenken <krenken@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 13:58:56 by krenken           #+#    #+#             */
-/*   Updated: 2024/11/05 15:34:00 by krenken          ###   ########.fr       */
+/*   Created: 2024/10/01 19:11:41 by krenken           #+#    #+#             */
+/*   Updated: 2024/11/05 16:59:16 by krenken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int	main(int argc, char **argv)
+int	error_syntax(char *str)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (!(*str == '+' || *str == '-' || (*str >= '0' && *str <= '9')))
 		return (1);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
+	if ((*str == '+' || *str == '-') && !(str[1] >= '0' && str[1] <= '9'))
+		return (1);
+	while (*++str)
+	{
+		if (!(*str >= '0' && *str <= '9'))
+			return (1);
+	}
 	return (0);
-	
+}
+
+int error_duplicate(t_node *a, int n)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->data == n)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
+
+void free_stack(t_node **stack)
+{
+	t_node 
 }
