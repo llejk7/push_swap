@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: krenken <krenken@student.42.fr>            +#+  +:+       +#+         #
+#    By: kjell <kjell@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 13:46:22 by krenken           #+#    #+#              #
-#    Updated: 2024/09/17 18:51:29 by krenken          ###   ########.fr        #
+#    Updated: 2024/12/29 01:16:54 by kjell            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME				= push_swap
 
 # Directories
-LIBFT				= ./Libft/libft.a
+LIBFT				= ./libft/libft.a
 INC					= inc/
 SRC_DIR				= srcs/
 OBJ_DIR				= obj/
